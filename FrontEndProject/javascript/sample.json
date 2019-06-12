@@ -1,0 +1,25 @@
+{
+  "points": [
+    {
+      "label": "Stevens Point",
+      "latitude": 44.13501,
+      "longitude": -89.564742,
+	  "pretext": "This is a point",
+	  "posttext": "It is in Stevens Point, WI"
+    },
+    {
+      "label": "Place",
+      "latitude": 38.02700,
+	  "longitude": -94.80543,
+	  "pretext": "This is a point",
+	  "posttext": "I have no idea where it is"
+    },
+    {
+      "label": "Another Place",
+      "latitude": 39.854,
+	  "longitude": -86.395,
+	  "pretext": "This is a point",
+	  "posttext": "I have no idea where it is"
+    }
+  ]
+}
