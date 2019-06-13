@@ -44,7 +44,7 @@ require([
 		  ]
 		};
 
-		for (var i = 0; i < Object.keys(samplePoints).length; i++){
+		for (var i = 0; i < Object.keys(samplePoints.points).length; i++){
 			
 			var point = new Point({
 			longitude: samplePoints.points[i].longitude,
