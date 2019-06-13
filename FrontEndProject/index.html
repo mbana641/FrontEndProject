@@ -5,6 +5,7 @@
 		<title>Map</title>
         <link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/themes/light/main.css">
 		<link rel="stylesheet" href="https://js.arcgis.com/4.11/esri/css/main.css">
+		<link rel="stylesheet" href="./styles/style.css">
 		<style>
 			html, body, #viewDiv {
 			  padding: 0;
@@ -16,7 +17,46 @@
 		<script src="https://js.arcgis.com/4.11/"></script>
         <script src="./javascript/map.js"></script>
     </head>
-	<body>
+	<body onload="off()">
+		<ul id="navigation">
+			<li><button class="btn btn__text" type="button" onclick='location.href="./index.html";'>Map</li>
+			<li><button class="btn btn__text" type="button" onclick='location.href="./addRemove.html";'>Manage Members</li>
+			<li><button class="btn btn__text" type="button" onclick="on()">Search for Spatial Data</button></li>
+		</ul>
+	<div id="overlay">
+		<div id="searchForm" class="searchForm" action="./???.??"
+		method="POST">
+		<table>
+			<div id="S">
+			<tr>
+			<td><p>Search: </p></td>
+			<td class="input"><input type="text" name="query" id="query"></td>
+			</div>
+			</tr>
+			<div id="C">
+			<tr>
+			<td><p># of results: </p></td>
+			<td class="input"><input type="text" name="resultsCount" id="resultsCount"></td>
+			</div>
+			</tr>
+			<tr>
+			<div class="next formActions">
+				<td><button class="btn btn__text" type="button" onclick="off()">CLOSE</button></td>
+                <td><button class="btn btn__elevated" type="submit">SEARCH</button></td>
+            </div>
+			</tr>
+			</table>
+		</div>
+	</div>
 		<div id="viewDiv"></div>
+	<script>
+	function on() {
+	  document.getElementById("overlay").style.display = "block";
+	}
+
+	function off() {
+	  document.getElementById("overlay").style.display = "none";
+	}
+	</script>
 	</body>
 </html>
