@@ -19,33 +19,34 @@
     </head>
 	<body onload="off()">
 		<ul id="navigation">
-			<li><button class="btn btn__text" type="button" onclick='location.href="./index.html";'>Map</li>
-			<li><button class="btn btn__text" type="button" onclick='location.href="./addRemove.html";'>Manage Members</li>
 			<li><button class="btn btn__text" type="button" onclick="on()">Search for Spatial Data</button></li>
 		</ul>
 	<div id="overlay">
-		<div id="searchForm" class="searchForm" action="./???.??"
+		<form name="searchForm" id="searchForm" class="searchForm" action="./index.html"
 		method="POST">
 		<table>
 			<div id="S">
 			<tr>
 			<td><p>Search: </p></td>
-			<td class="input"><input type="text" name="query" id="query"></td>
+            <td><p id="space">--</p></td>
+			<td class="input"><input type="text" name="query" id="query" required></td>
 			</div>
 			</tr>
 			<div id="C">
 			<tr>
 			<td><p># of results: </p></td>
-			<td class="input"><input type="text" name="resultsCount" id="resultsCount"></td>
+            <td><p id="space">--</p></td>
+			<td class="input"><input type="text" name="resultsCount" id="resultsCount" required></td>
 			</div>
 			</tr>
 			<tr>
 			<div class="next formActions">
 				<td><button class="btn btn__text" type="button" onclick="off()">CLOSE</button></td>
+                <td><p id="space">--</p></td>
                 <td><button class="btn btn__elevated" type="submit">SEARCH</button></td>
             </div>
 			</tr>
-			</table>
+        </table>
 		</div>
 	</div>
 		<div id="viewDiv"></div>
