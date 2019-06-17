@@ -4,70 +4,85 @@
 	<meta charset="UTF-8">
 	<title>Membership Query</title>
 	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+	<script>
+	function myFunction() {
+		alert("Are you sure you want to delete this account?");
+	}
+		$(document).ready(function(){
+			$(".remove").hide();
+			$(".add_li").addClass("active");
+
+			$(".remove_li").click(function(){
+			  $(this).addClass("active");
+			  $(".add_li").removeClass("active");
+			  $(".remove").show();
+			   $(".add").hide();
+			})
+
+			$(".add_li").click(function(){
+			  $(this).addClass("active");
+			  $(".remove_li").removeClass("active");
+			  $(".add").show();
+			   $(".remove").hide();
+			})
+		});
+	</script>
 </head>
 <body>
 	<form action="contactform.php" method="post">
 <div class="header">
 	<img src="esri.png" alt="esrilogo" width=6% height=6%>
-<!--	<div class="header-right">
-		<a class="active" href="#members">Membership Query</a>
-		<a href="#location">Location Query</a>
-	</div>-->
 	<ul>
 		<li><a class="active" href="members">Membership Query</a></li>
 		<li><a href="location">Location Query</a></li>
 	</ul>
-
 </div>
-<div class="wrapper">
-  <div class="contact-form">
-		<div class="tabs">
-			<ul>
-				<li class="addmem"> Add Member </li>
-				<li class="removemem"> Remove Member </li>
-			</ul>
-		</div>
-		<div class="add">
-	    <div class="input-fields">
-	      <input type="text" id="test" class="input" placeholder="First Name">
-				<input type="text" class="input" placeholder="Last Name">
-	      <input type="text" class="input" placeholder="Email Address">
-	      <input type="text" class="input" placeholder="Username">
-	      <input type="password" class="input" placeholder="Password">
-				<input type="role" class="input" placeholder="Role">
-	<!--			<select name="Role"> -->
-				<div class="container">
-					<div class="select">
-						<div class="input">
-						</div>
-						<div class="select-options">
-							<ul>
-								<li class="selected"><span> Role </span>
-								<li><span> Organization Publisher </span>
-								<li><span> Organization Viewer </span>
-								<li><span> Organization Admin </span>
-						<!--<select>
-								<option value="role1">Role</option>
-								<option value="role2">Organization Publisher</option>
-								<option value="role3">Organization Viewer</option>
-								<option value="role4">Organization Admin</option>
-						</select>-->
-					</div>
+  <div class="wrapper">
+  <div class="container">
+    <div class="tabs">
+      <ul>
+        <li class="add_li">Add Member</li>
+        <li class="remove_li">Remove Member</li>
+      </ul>
+    </div>
+
+    <form action="/add_page.php" method="post">
+			<div class="add">
+	      <div class="input_field">
+	        <input type="text" class="input" placeholder="First Name" required></div>
+				<div class="input_field">
+					<input type="text" class="input" placeholder="Last Name"></div>
+				<div class="input_field">
+		      <input type="text" class="input" placeholder="E-Mail"></div>
+				<div class="input_field">
+					<input type="text" class="input" placeholder="Username"></div>
+				<div class="input_field">
+					<input type="password" class="input" placeholder="Password"></div>
+				<!--<div class="input_field">
+					<div class="container">
+					<input type="text" class="input" placeholder="Role"></div>-->
+				<div class="select-field" style="width:360px;">
+					<select>
+						<option value="0" selected hidden>Select Role</option>
+				    <option value="1">Organization Publisher</option>
+				    <option value="2">Organization Viewer</option>
+				    <option value="3">Organization Admin</option>
+				  </select>
 				</div>
-				<input type="text" class="input" placeholder="Organization">
-				<!--<div class="btn">send</div>-->
-				<button class="button" type="button" style="vertical-align:middle"> <span> Add </span></button>
-	    </div>
-	  </div>
-	</div>
-	<div class="remove">
-		<div class="input_field">
-			<input type="text" class="input" placeholder="Username">
-			<button class="button" type="button" style="vertical-align:middle"> <span> Delete </span></button>
-		</div>
-	</div>
-</div>
+				<div class="input_field">
+					<input type="text" class="input" placeholder="Organization"required></div>
+						<button class="button" type="button" style="vertical-align:middle"> <span> Add </span></button>
+			</div>
 
-	</form>
+		<!--<div class="remove">-->
+		<form action="/remove_page.php" method="post">
+			<div class="remove">
+	      <div class="input_field">
+	        <input type="text" class="input" placeholder="Username"></div>
+				<button class="button" type="button" style="vertical-align:middle" onclick="myFunction()"> <span> Remove </span></button>
+			</div>
+  </div>
+</div>
 </body>
 </html>
